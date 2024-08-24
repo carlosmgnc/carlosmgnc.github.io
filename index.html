@@ -1,9 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>test</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos Morales Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
+  <meta name="description" content="">
+  <meta name="author" content="">
 </head>
 <body>
-    <p>test</p>
+  <nav id="desktop-nav">
+    <div class="logo"> Carlos Morales</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo"> Carlos Morales</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img src="./assets/profile-pic.jpeg" style="width: 100%;">
+    </div>
+    <div id="intro-section">
+      <h1 class="title" id="main-title"> Carlos Morales</h1>
+      <p class="section__text__p2">Mechanical Engineer,</p>
+      <p class="section__text__p2">Passionate for Dynamics and Controls.</p>
+      <h2>Purpose</h1>
+      <p class="section__text__p2">I am excited for the opportunity to contribute to ongoing work within aerospace controls, and I am confident that my experiences have prepared me to do so. Whether it's working on the guidance and control of launch vehicles or attitude control for aircraft, my goal is to help broaden the scope of the places we can navigate, allowing humanity to explore and take charge of the most difficult environments on Earth and beyond.</p>
+      <div class="btn-container">
+        <button class="btn btn-color-1" onclick="window.open('./assets/Carlos Morales Resume.pdf')"> Resume</button>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <div class="section__text">
+      <h1 class="title"> Projects</h1>
+    </div>
+    <div class="project">
+      <div class="slider-wrapper">
+        <h1 class="section__text__p2">Active Fin-Controlled Rocket</h1>
+        <div class="slider">
+          <iframe id="slide-1-1" src="https://www.youtube.com/embed/50tnKB8cTsE?si=8_FT6lxz1RFy2Ny7&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <img id="slide-1-2" src="assets/rocket-cad.png" style="width: 50%;"/>
+          <iframe  id="slide-1-3" src="https://www.youtube.com/embed/yArZBXw1bVw?controls=0&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <img id="slide-1-4" src="assets/rocket-pic.png" style="width: 50%;"/>
+          <img id="slide-1-5" src="assets/fins.gif" style="width: 25%;"/>
+          <img id="slide-1-6" src="assets/aero-simulink-small.png" style="width: 25%;"/>
+
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-1-1"></a>
+          <a href="#slide-1-2"></a>
+          <a href="#slide-1-3"></a>
+          <a href="#slide-1-4"></a>
+          <a href="#slide-1-5"></a>
+          <a href="#slide-1-6"></a>
+        </div>
+      </div>
+      <p class="slider-description">
+        The goal of this project was to apply aerodynamic control theory to stabilize the attitude of a model rocket during ascent. I've developed an embedded 
+        quaternion-based attitude estimation algorithm using integrated gyro measurements (dead reckoning). Since rockets experience 
+        large amounts of acceleration, the assumptions made by traditional 9-DOF sensor fusion algorithms is broken. For this reason 
+        I've written my own attitude estimator by integration performed with a second order taylor expansion of the quaternion 
+        kinematic matrix exponential. I've also designed and manufactured custom actuators to control aft fins used to aerodynamically 
+        stabilize rocket's yaw, pitch, and roll. I developed 6-DOF aerodynamic flight control simulations using the modified semi-empirical aerodynamic 
+        models from the Barrowman equations, and used these simulations to optimize, design, and tune control gains before flight.
+        The rocket was successfully launched and achieved a very stable attitude throughout its first flight. The plan for the future is
+        to launch with larger motors and include data logging to better validate the control response.
+      </p>
+    </div>
+
+    <div class="project">
+      <div class="slider-wrapper">
+        <h1 class="section__text__p2">Optimal State-Space Control for Inverted Pendulum</h1>
+        <div class="slider">
+          <!-- <img id="slide-2-1" src="assets/pend.gif" style="width: 50%;"/> -->
+           <!-- &autoplay=1&loop=1&playlist=x8M27gKX7cU -->
+          <iframe  id="slide-2-1" src="https://www.youtube.com/embed/x8M27gKX7cU?controls=0&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <!-- <video id="slide-2-1" autoplay loop muted style="width: 25%;">
+            <source src="assets/pend.MOV" type="video/mp4">
+          </video> -->
+          <img id="slide-2-2" src="assets/pend-sim.gif" style="width: 50%;"/>
+          <!-- <video id="slide-2-2" autoplay loop muted style="width: 25%;">
+            <source src="assets/pend-sim.mov" type="video/mp4">
+          </video> -->
+          <img id="slide-2-3" src="assets/pend-sim-graph.png" style="width: 50%;"/>
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-2-1"></a>
+          <a href="#slide-2-2"></a>
+          <a href="#slide-2-3"></a>
+        </div>
+      </div>
+      <p class="slider-description">
+        Designed and built an inverted pendulum benchmark system to implement state space control methods.  
+        Performed linearization of the nonlinear equations of motion for the cart-pole system .
+        Implemented Full-State Feedback with Linear Quadratic Regulator (LQR) to stabilize pendulum at its vertical equilibrium.
+        System modelling and simulation performed with MATLAB, and the control law was implemented in C++.
+      </p>
+    </div>
+
+    <div class="project">
+      <div class="slider-wrapper">
+        <h1 class="section__text__p2">2D Compressible Euler Equation CFD Solver</h1>
+        <div class="slider">
+          <img id="slide-1" src="assets/cfd-gif.gif" style="width: 50%;"/>
+          <img id="slide-2" src="assets/method1.png" style="width: 50%;"/>
+          <img id="slide-3" src="assets/method2.png" style="width: 50%;"/>
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-1"></a>
+          <a href="#slide-2"></a>
+          <a href="#slide-3"></a>
+        </div>
+      </div>
+      <p class="slider-description">
+        Programmed a CFD solver for the inviscid 2D Euler equations using a finite volume Lax Friedrich scheme with a Runge-Kutta 2 time integration from scratch 
+        using Python.
+        Problem formulation consisted of airflow around an inclined flat plate given a variable angle of attack.
+        The plate was discretized by a line-drawing algorithm used to define impermeable wall boundary conditions for each 
+        grid cell making up the plate. 
+      </p>
+    </div>
+
+    <div class="project">
+      <div class="slider-wrapper">
+        <h1 class="section__text__p2">Bi-copter Attitude Stabilization</h1>
+        <div class="slider">
+          <img id="slide-3-1" src="assets/control-model.png" style="width: 50%;"/>
+          <img id="slide-3-2" src="assets/sim-results.png" style="width: 50%;"/>
+          <!-- <video id="slide-3-3" autoplay loop muted style="width: 25%;">
+            <source src="assets/attitude-response.mov" type="video/mp4">
+          </video> -->
+          <!-- &autoplay=1&loop=1&playlist=n7MPdlj6sFI -->
+          <iframe  id="slide-3-3" src="https://www.youtube.com/embed/n7MPdlj6sFI?controls=0&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-3-1"></a>
+          <a href="#slide-3-2"></a>
+          <a href="#slide-3-3"></a>
+        </div>
+      </div>
+      <p class="slider-description">
+        Rigid body dynamics of a bi-modal drone simulated in MATLAB and SIMULINK using Euler Angle attitude representation. 
+        Attitude integrated in time using Runge-Kutta numerical integration of the Euler Angle kinematic differential equations.
+        Successful attitude stabilization by coupled PID controllers for yaw, pitch, and roll controlling rotor thrust vector angles. 
+      </p>
+    </div>
+
+    <div class="project">
+      <div class="slider-wrapper">
+        <h1 class="section__text__p2">VEX Robotics</h1>
+        <div class="slider">
+          <!-- <video id="slide-4-1" autoplay loop muted style="width: 25%;">
+            <source src="assets/robot.mp4" type="video/mp4">
+          </video> -->
+          <!-- &autoplay=1&loop=1&playlist=fxdGyOOruj8 -->
+          <iframe  id="slide-4-1" src="https://www.youtube.com/embed/fxdGyOOruj8?controls=0&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <img id="slide-4-2" src="assets/kalahari.jpg" style="width: 50%;"/>
+          <img id="slide-4-3" src="assets/tt-robot.jpg" style="width: 50%;"/>
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-4-1"></a>
+          <a href="#slide-4-2"></a>
+          <a href="#slide-4-3"></a>
+        </div>
+      </div>
+      <p class="slider-description">
+        Led an interdisciplinary team to develop highly successful electromechanical robots that competed at an international level for over four years. 
+        Implemented autonomous control systems for accurate motion control of both holonomic and non-holonomic drive trains using PID, Odometry Position Tracking, Pure Pursuit, and Motion Profiling.
+        Developed autonomous motion control libraries in C++ for incoming Purdue students to use the existing control algorithms we had already developed and tested.
+        World Championship 2018-2019 (Ranked 1st in Division, 1st in Operator Skills, Division Finalists).
+        Kalahari 2020 National Signature Event Tournament Champions.
+      </p>
+    </div>
+
+    <div id="contact">
+      <div class="section__text">
+        <h1 class="title"> Contact & Links</h1>
+        <div class="contact-info">
+          <h2>Phone: </h2>
+          <p class="section__text__p2"> +1 (317)-670-0841</p>
+        </div>
+        <div class="contact-info">
+          <h2>Email: </h2>
+          <p class="section__text__p2"> cjmorale@usc.edu</p>
+        </div>
+        <div class="contact-info">
+          <h2>Address: </h2>
+          <p class="section__text__p2"> 14133 Charity Chase Cir. Carmel, IN 46074</p>
+        </div>
+        <button class="btn btn-color-1" onclick="window.open('https://www.linkedin.com/in/carlosmorales7701/')"> LinkedIn</button>
+        <button class="btn btn-color-1" onclick="window.open('https://www.youtube.com/@carlosm7701')"> YouTube</button>
+        <button class="btn btn-color-1" onclick="window.open('./assets/Carlos Morales Resume.pdf')"> Resume</button>
+      </div>
+    </div>
+
+  </section>
+  <script src="script.js"></script>
 </body>
 </html>
