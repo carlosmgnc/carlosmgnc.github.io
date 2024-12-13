@@ -272,8 +272,12 @@ section{
   flex: 1 0 100%;
   scroll-snap-align: start;
   object-fit: cover;
-  z-index: 1;
+  z-index: 0;
   /* will-change: transform; */
+}
+
+.slider-description a {
+  color: rgb(0, 0, 238);
 }
 
 .slider-nav {

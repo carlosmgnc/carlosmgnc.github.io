@@ -53,19 +53,17 @@
   <section id="projects">
     <div class="section__text">
       <h1 class="title"> Projects</h1>
+
     </div>
     <div class="project">
       <div class="slider-wrapper">
-        <h1 class="section__text__p2">Active Fin-Controlled Rocket</h1>
+        <h1 class="section__text__p2">Powered Descent Guidance Using Convex Optimization</h1>
         <div class="slider">
-          <iframe id="slide-1-1" src="https://www.youtube.com/embed/50tnKB8cTsE?si=8_FT6lxz1RFy2Ny7&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <img id="slide-1-2" src="assets/rocket-cad.png" style="width: 50%;"/>
-          <iframe  id="slide-1-3" src="https://www.youtube.com/embed/yArZBXw1bVw?controls=0&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <img id="slide-1-4" src="assets/control-mount.png" style="width: 50%;"/>
-          <img id="slide-1-5" src="assets/rocket-pic.png" style="width: 50%;"/>
-          <img id="slide-1-6" src="assets/fins.gif" style="width: 25%;"/>
-          <img id="slide-1-7" src="assets/aero-simulink-small.png" style="width: 25%;"/>
-
+          <img id="slide-1-1" src="assets/animation.gif" style="object-fit: contain; width: 100%;"/>
+          <img id="slide-1-2" src="assets/trajectory.png" style="object-fit: contain; width: 100%;"/>
+          <img id="slide-1-3" src="assets/throttle.png" style="object-fit: contain; width: 100%;"/>
+          <img id="slide-1-4" src="assets/mass.png" style="object-fit: contain; width: 100%;;"/>
+          <img id="slide-1-5" src="assets/cost_tof.png" style="object-fit: contain; width: 100%;"/>
         </div>
         <div class="slider-nav">
           <a href="#slide-1-1"></a>
@@ -73,8 +71,41 @@
           <a href="#slide-1-3"></a>
           <a href="#slide-1-4"></a>
           <a href="#slide-1-5"></a>
-          <a href="#slide-1-6"></a>
-          <a href="#slide-1-7"></a>
+        </div>
+      </div>
+      <p class="slider-description">
+        This is a re-implementation of the Lossless Convexification technique for generating fuel-optimal trajectories for powered descent guidance problems developed by Dr. Behçet Açikmeşe. 
+        Due to non-convex thrust constraints imposed by requiring a minimum thrust vector, this optimization problem is inherently non-convex. Meaning, a local optimal solution is not
+        gauranteed to be the global optimum. However, by the introduction of slack variables and careful reformulation of these constraints, the original problem can be "relaxed" into a new 
+        convex problem which can be solved quickly and reliably with existing solvers. Importantly, Açikmeşe and Ploen showed that the optimal solution to the new 'relaxed' problem is infact 
+        the optimal solution to the original problem. This means that, by solving the relaxed problem, a global optimal solution to the original problem has been found. 
+        <br><b>Reference: </b> <a href="https://doi.org/10.2514/1.27553">Convex Programming Approach to Powered Descent Guidance for Mars Landing</a>
+        <br> <b>Github: </b> <a href="https://github.com/carlosmgnc/lcvx_descent_guidance.git">lcvx_descent_guidance</a>
+      </p>
+    </div>
+
+    </div>
+    <div class="project">
+      <div class="slider-wrapper">
+        <h1 class="section__text__p2">Active Fin-Controlled Rocket</h1>
+        <div class="slider">
+          <iframe id="slide-2-1" src="https://www.youtube.com/embed/50tnKB8cTsE?si=8_FT6lxz1RFy2Ny7&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <img id="slide-2-2" src="assets/rocket-cad.png" style="width: 50%;"/>
+          <iframe  id="slide-2-3" src="https://www.youtube.com/embed/yArZBXw1bVw?controls=0&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <img id="slide-2-4" src="assets/control-mount.png" style="width: 50%;"/>
+          <img id="slide-2-5" src="assets/rocket-pic.png" style="width: 50%;"/>
+          <img id="slide-2-6" src="assets/fins.gif" style="width: 25%;"/>
+          <img id="slide-2-7" src="assets/aero-simulink-small.png" style="width: 25%;"/>
+
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-2-1"></a>
+          <a href="#slide-2-2"></a>
+          <a href="#slide-2-3"></a>
+          <a href="#slide-2-4"></a>
+          <a href="#slide-2-5"></a>
+          <a href="#slide-2-6"></a>
+          <a href="#slide-2-7"></a>
         </div>
       </div>
       <p class="slider-description">
@@ -207,8 +238,6 @@
           <p class="section__text__p2"> carlosm3@uw.edu</p>
         </div>
         <div class="contact-info">
-          <h2>Address: </h2>
-          <p class="section__text__p2"> 14133 Charity Chase Cir. Carmel, IN 46074</p>
         </div>
         <button class="btn btn-color-1" onclick="window.open('https://www.linkedin.com/in/carlosmorales7701/')"> LinkedIn</button>
         <button class="btn btn-color-1" onclick="window.open('https://www.youtube.com/@carlosm7701')"> YouTube</button>
