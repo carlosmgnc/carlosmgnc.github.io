@@ -268,7 +268,7 @@ section{
   z-index: 1; 
 }
 
-.slider img, .slider iframe, .slider video {
+.slider img, .slider iframe, .slider video, .slider .mult_img {
   flex: 1 0 100%;
   scroll-snap-align: start;
   object-fit: cover;
@@ -276,8 +276,23 @@ section{
   /* will-change: transform; */
 }
 
+.mult_img {
+  display: flex;
+  justify-content: center;
+}
+
+.mult_img img {
+  flex: 1 0 50%;
+  object-fit: contain;
+  width: 50%;  /* Ensure each image takes up half the width */
+  margin: 0;
+}
+
+
 .slider-description a {
   color: rgb(0, 0, 238);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
 }
 
 .slider-nav {
