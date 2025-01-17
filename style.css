@@ -169,8 +169,8 @@ section{
 
 .section__pic-container {
   display: flex;
-  height: 33vw;
-  width: 33vw;
+  height: 25vw;
+  width: 25vw;
   margin: auto 0;
   overflow: hidden;
 }
