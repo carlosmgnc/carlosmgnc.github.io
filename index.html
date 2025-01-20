@@ -78,7 +78,7 @@
       <p class="slider-description">
         This is an implementation of a Sequential Convex Programming approach for real-time 6-DOF powered descent trajectory generation. It works by leveraging the efficieny of
         interior point methods by solving a series of convex subproblems that converge to a solution to the original nonconvex problem. To obtain a subproblem, the dynamics are 
-        linearized and discretized about a reference trajectory along with the remaining nonconvex constraints.This problem now describes a discrete-time linear time varying system 
+        linearized and discretized about a reference trajectory along with the remaining nonconvex constraints. This problem now describes a discrete-time linear time varying system 
         which is convex and can be solved reliably using readily available convex solvers. Once solved, the reference trajectory is updated and the next subproblem is solved using 
         the new reference trajectory. This process continues until the solution converges to a dynamically feasible solution. Interestingly, the intial trajectory guess does not 
         have to be particularly great, a simple linear interpolation between the intial and final state can handle a wide-range of intial conditions.
@@ -92,32 +92,44 @@
 
     <div class="project">
       <div class="slider-wrapper">
-        <h1 class="section__text__p2">3-DOF Powered Descent Guidance Using Convex Optimization</h1>
+        <h1 class="section__text__p2">Lossless Convexification Model-Predictive Control </h1>
         <div class="slider">
           <div class="mult_img" id="slide-2-1">
+            <img src="assets/mpc_trajectory.png"/>
+            <img src="assets/mpc_animation.gif"/>
+          </div>
+
+          <div class="mult_img" id="slide-2-2">
             <img src="assets/trajectory.png"/>
             <img src="assets/animation.gif"/>
           </div>
-          <img id="slide-2-2" src="assets/throttle.png" style="object-fit: contain; width: 100%;"/>
-          <img id="slide-2-3" src="assets/mass.png" style="object-fit: contain; width: 100%;"/>
-          <img id="slide-2-4" src="assets/cost_tof.png" style="object-fit: contain; width: 100%;"/>
+          <img id="slide-2-3" src="assets/throttle.png" style="object-fit: contain; width: 100%;"/>
+          <img id="slide-2-4" src="assets/mass.png" style="object-fit: contain; width: 100%;"/>
+          <img id="slide-2-5" src="assets/cost_tof.png" style="object-fit: contain; width: 100%;"/>
         </div>
         <div class="slider-nav">
           <a href="#slide-2-1"></a>
           <a href="#slide-2-2"></a>
           <a href="#slide-2-3"></a>
           <a href="#slide-2-4"></a>
+          <a href="#slide-2-5"></a>
         </div>
       </div>
       <p class="slider-description">
-        This is an implementation of the Lossless Convexification technique for generating fuel-optimal trajectories for powered descent guidance problems developed by Dr. Behçet Açikmeşe. 
+        This is an implementation of the Lossless Convexification technique for generating fuel-optimal trajectories for powered descent guidance problems developed by Behçet Açikmeşe. 
         Due to non-convex thrust constraints imposed by requiring a minimum thrust vector, this optimization problem is inherently non-convex. Meaning, a local optimal solution is not
         gauranteed to be the global optimum. However, by the introduction of slack variables and careful reformulation of these constraints, the original problem can be "relaxed" into a new 
         convex problem which can be solved quickly and reliably with existing solvers. Importantly, Açikmeşe and Ploen showed that the optimal solution to the new 'relaxed' problem is infact 
-        the optimal solution to the original problem. This means that, by solving the relaxed problem, a global optimal solution to the original problem has been found. 
+        the optimal solution to the original problem.
+        <br>
+        <br> Due to the efficieny of interior-point methods for convex optimization and the gauranteed convergence of the Lossless Convexification (lcvx) algorithm, lcvx can be implemented in a 
+        real-time Model Predictive Control (MPC) framework. This works be repeatedly solving the problem at each time step and inacting the imidiate desired control from the optimal trajectory.
+        MPC allows you to account for disturbance and uncertainties because you are constantly re-solving the problem, treating your current state as the new initial condition. To implement
+        this in a 6-DOF landing problem an additional attitude controller is needed to point the rocket along the desired thrust vector using the engine gimbals. A key assumption is that the
+        attitude dynamics are much faster than the translational dynamics such that the rocket can quickly achieve the desired thrust vector from the guidance system. 
         
         <span style="font-size: 0.9rem;"><br><b>Reference: </b> <a href="https://doi.org/10.2514/1.27553">Convex Programming Approach to Powered Descent Guidance for Mars Landing</a>
-        <br> <b>Github: </b> <a href="https://github.com/carlosmgnc/lcvx_descent_guidance.git">lcvx_descent_guidance</a>
+        <br> <b>Github: </b> <a href="https://github.com/carlosmgnc/lcvx_descent_guidance.git">lcvx_descent_guidance</a> <b>lcvx with MPC: </b><a href="https://github.com/carlosmgnc/lcvx_mpc.git">lcvx_mpc</a>
         </span>
       </p>
     </div>
